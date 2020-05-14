@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern React Farm</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|PT+Sans|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="parallax" id="bg-last"></div>
+<div class="parallax" id="bg-mid"></div>
+<div class="parallax" id="bg-top"></div>
+<div id="root"></div>
+<script type="text/javascript" src="bundle.js"></script>
+<script>
+    let back = document.querySelector('#bg-last'),
+        mid = document.querySelector('#bg-mid'),
+        front = document.querySelector('#bg-top');
+
+    function reset(el, cb){
+        el.setAttribute('style', `transition:none; background-position-x: 0vw`);
+        setTimeout(cb, 33)
+    }
+
+    function paraEl(el, dur){
+        el.setAttribute('style', `background-position-x: -100vw`);
+        setTimeout(() => reset(el, () => paraEl(el, dur)), dur);
+    }
+
+    paraEl(front, 90000);
+    paraEl(mid, 150000);
+    paraEl(back, 300000);
+
+</script>
+</body>
+</html>
