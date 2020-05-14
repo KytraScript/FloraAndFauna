@@ -8,7 +8,7 @@ the visuals are currently in place with the game logic being Kytra's current foc
 player to choose from 14 different villagers each with their own animal type affinity as well as 32 individual animals to
 place in the various biomes.
 
-<img src="/KytraFloraAndFaunaDemo.gif">
+<img src="/KytraFloraAndFaunaVisualDemo.gif">
 
 ---
 
